@@ -1595,7 +1595,7 @@ namespace xt
     }
 
 // Workaround for rebind_container problems on GCC 8 with C++17 enabled
-#if defined(__GNUC__) && __GNUC__ > 6 && !defined(__clang__) && __cplusplus >= 201703L
+#ifdef __cpp_template_template_args
     template <class X, class T, std::size_t N>
     struct rebind_container<X, aligned_array<T, N>>
     {
